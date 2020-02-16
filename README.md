@@ -12,6 +12,7 @@
 
 # Instructions
  - Clone this repository or download
+ - Find out which colors are part of the icon, use an editor or an application called gpick
  - Add variant name to Papirus-folders script
  - Run Java program and enter new colors and and cores that will be replaced
  - Run the ./Install.sh, preferable to use with sudo!
