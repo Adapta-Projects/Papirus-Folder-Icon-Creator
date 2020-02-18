@@ -3,7 +3,7 @@
 PREFIX="Icons/Output"
 LOCAL="/usr/share/icons/Papirus"
 
-echo -e "\nWelcome to Papirus Custom Folder installer!\n"
+echo -e "\nWelcome to Papirus Custom Folder installer!"
 echo -e "\tFor better usage, run this script using root user!"
 
 if [ ! $USER = "root" ]
@@ -13,7 +13,7 @@ then
         echo "Install first the papirus icon!"
         exit 0
     else
-        echo "Papiruc icon already installed!"
+        echo "Papirus icon already installed!"
         LOCAL = "/home/$USER/.icons/Papirus"
     fi
 else

@@ -60,7 +60,6 @@ public class App {
     public static void changeColor(Path src, String dest, Map<String, String> colors, String nameOfTheColor) throws IOException {
         DirectoryStream<Path> dir = Files.newDirectoryStream(src);
         for (Path c : dir) {
-            File file = c.toFile();
             List<String> lines = Files.readAllLines(c);
             for (int i = 0; i < lines.size(); i ++) {
                 for (String oldColor : colors.keySet()) lines.set(i, lines.get(i).replace(oldColor, colors.get(oldColor)));
