@@ -43,4 +43,5 @@ mv $PREFIX/48x48/* $LOCAL/48x48/places
 mv $PREFIX/32x32/* $LOCAL/32x32/places
 mv $PREFIX/24x24/* $LOCAL/24x24/places
 mv $PREFIX/22x22/* $LOCAL/22x22/places
+rm -f Patch.patch
 echo "Icons installed!"
