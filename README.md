@@ -2,7 +2,7 @@
  This simple program generate folders icons for <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus Icon Theme</a>!
 
 # Requirements for create icons
- - Open JDK 11 (package name: openjdk-11-jdk)
+ - Open JRE 11 (package name: openjdk-11-jre)
  - Patch program (package name: patch)
  - <a href="https://github.com/thezbyg/gpick">Gpick</a> (package name: gpick)
   
