@@ -38,9 +38,9 @@ else
 fi
 
 echo "Instaling icons..."
-cp $PREFIX/64x64/* $LOCAL/64x64/places
-cp $PREFIX/48x48/* $LOCAL/48x48/places
-cp $PREFIX/32x32/* $LOCAL/32x32/places
-cp $PREFIX/24x24/* $LOCAL/24x24/places
-cp $PREFIX/22x22/* $LOCAL/22x22/places
+mv $PREFIX/64x64/* $LOCAL/64x64/places
+mv $PREFIX/48x48/* $LOCAL/48x48/places
+mv $PREFIX/32x32/* $LOCAL/32x32/places
+mv $PREFIX/24x24/* $LOCAL/24x24/places
+mv $PREFIX/22x22/* $LOCAL/22x22/places
 echo "Icons installed!"
