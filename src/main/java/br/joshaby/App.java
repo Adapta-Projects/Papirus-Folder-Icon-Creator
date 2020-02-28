@@ -16,21 +16,13 @@ public class App {
 
     static Scanner input = new Scanner(System.in);
 
-    public static String getPWD() {
+    public static String getPWD() throws Exception {
         String pwd = "";
-        try {
-            Process p;
-            String s;
-            p = Runtime.getRuntime().exec("pwd");
-            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            while ((s = br.readLine()) != null) {
-                pwd = s;
-                break;
-            }
-        }
-        catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
+        Process p;
+        String s;
+        p = Runtime.getRuntime().exec("pwd");
+        BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        pwd = br.readLine();
         return pwd;
     }
 
@@ -90,7 +82,7 @@ public class App {
             String outputPath = IconsPath + "/Output";
             init(IconsPath, outputPath);
         }
-        catch (InvalidPathException | IOException e) {
+        catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
