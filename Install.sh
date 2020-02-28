@@ -32,17 +32,17 @@ else
             echo "Appling patch in papirus-folders..."
             diff -Naur /usr/bin/papirus-folders papirus-folders > Patch.patch
             patch /usr/bin/papirus-folders < Patch.patch
-            chmod 755 /usr/bin/papirus-folders
+            rm -f Patch.patch
+            chmod 744 /usr/bin/papirus-folders
             echo "Patch applied!"
         fi
     fi
 fi
 
 echo "Instaling icons..."
-mv $PREFIX/64x64/* $LOCAL/64x64/places
-mv $PREFIX/48x48/* $LOCAL/48x48/places
-mv $PREFIX/32x32/* $LOCAL/32x32/places
-mv $PREFIX/24x24/* $LOCAL/24x24/places
-mv $PREFIX/22x22/* $LOCAL/22x22/places
-rm -f Patch.patch
+cp $PREFIX/64x64/* $LOCAL/64x64/places
+cp $PREFIX/48x48/* $LOCAL/48x48/places
+cp $PREFIX/32x32/* $LOCAL/32x32/places
+cp $PREFIX/24x24/* $LOCAL/24x24/places
+cp $PREFIX/22x22/* $LOCAL/22x22/places
 echo "Icons installed!"
