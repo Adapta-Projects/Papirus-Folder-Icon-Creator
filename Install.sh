@@ -1,32 +1,40 @@
 #!/bin/bash
 
-PREFIX="Icons/Output"
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+YELLOW=`tput setaf 3`
+BLUE=`tput setaf 4`
+PURPLE=`tput setaf 5`
+LIGHTBLUE=`tput setaf 6`
+RESET=`tput sgr0`
+
+PREFIX="New Icons"
 LOCAL="/usr/share/icons/Papirus"
 
-echo -e "\nWelcome to Papirus Custom Folder installer!"
-echo -e "\tFor better usage, run this script using root user!"
+echo -e "Welcome to ${RED}P${RED}${RESET}${YELLOW}a${YELLOW}${RESET}${GREEN}p${GREEN}${RESET}${BLUE}i${BLUE}${RESET}${PURPLE}r${PURPLE}${RESET}${RED}u${RED}${RESET}${LIGHTBLUE}s${LIGHTBLUE}${RESET} Folder Icon installer!"
+echo -e "${YELLOW}WARNING${YELLOW}${RESET}: For better usage, run this script using root user!\n"
 
 if [ ! $USER = "root" ]
 then
     if [ ! -d /home/$USER/.icons/Papirus ]
     then
-        echo "Install first the papirus icon!"
+        echo -e "${RED}Install first the papirus icon!${RED}${RESET}\n"
         exit 0
     else
-        echo "Papirus icon already installed!"
+        echo -e "Papirus icon already installed!\n"
         LOCAL = "/home/$USER/.icons/Papirus"
     fi
 else
     if [ ! -d $LOCAL ]
     then
-        echo "Install first the papirus icon!"
+        echo -e "${RED}Install first the papirus icon!${RED}${RESET}\n"
         exit 0
     else
         if [ ! -f /usr/bin/papirus-folders ]
         then
             echo "Papirus-folders script not is installed!"
             cp papirus-folders /usr/bin/
-            echo "Papirus-folders script installed!"
+            echo -e "Papirus-folders script installed!\n"
         else
             echo "Papirus-folders already installed!"
             echo "Appling patch in papirus-folders..."
@@ -34,7 +42,7 @@ else
             patch /usr/bin/papirus-folders < Patch.patch
             rm -f Patch.patch
             chmod 744 /usr/bin/papirus-folders
-            echo "Patch applied!"
+            echo -e "Patch applied!\n"
         fi
     fi
 fi
