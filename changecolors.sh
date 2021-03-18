@@ -11,8 +11,8 @@ RESET=`tput sgr0`
 echo -e "${RED}P${RED}${RESET}${YELLOW}a${YELLOW}${RESET}${GREEN}p${GREEN}${RESET}${BLUE}i${BLUE}${RESET}${PURPLE}r${PURPLE}${RESET}${RED}u${RED}${RESET}${LIGHTBLUE}s${LIGHTBLUE}${RESET} Folder Icon Creator - A shell script for create colorful folders!\n"
 
 folders=('22x22' '24x24' '32x32' '48x48' '64x64')
-colors=('4f4f4f' 'e4e4e4' 'ffffff' 'cccccc') # default folder colors
-newColors=('4f4f4f' '0000A0' 'ffffff' 'cccccc') # Put new colors in this folder
+colors=('4f4f4f' 'e4e4e4' 'ffffff' 'cccccc')
+newColors=('4f4f4f' 'e4e4e4' 'ffffff' 'cccccc')
 
 echo -n "Enter the name of the variant: "
 read colorName
@@ -42,7 +42,7 @@ echo
 echo "Creating icons..."
 for folder in ${folders[*]}; do
     for icon in $(cat iconsNames.txt); do
-        cat "Base Icons"/$folders/$icon | sed -e "s/${colors[0]}/${newColors[0]}/" \
+        cat "Base Icons"/$folder/$icon | sed -e "s/${colors[0]}/${newColors[0]}/" \
             -e "s/${colors[1]}/${newColors[1]}/" \
             -e "s/${colors[2]}/${newColors[2]}/" \
             -e "s/${colors[3]}/${newColors[3]}/" > "New Icons"/$folder/` echo $icon | sed "s/white/$colorName/" `;
